@@ -14,8 +14,8 @@ scheduler = AsyncIOScheduler()
 async def lifespan(app: FastAPI):
     # On startup, add the job and start the scheduler
     print("Application startup...")
-    # Schedule the job to run every 5 minutes for easy testing
-    scheduler.add_job(send_recommendations_to_all_users, 'interval', minutes=5)
+    # Schedule the job to run every Saturday at 19:00
+    scheduler.add_job(send_recommendations_to_all_users, 'cron', day_of_week='sat', hour=19)
     scheduler.start()
     yield
     # On shutdown, stop the scheduler
