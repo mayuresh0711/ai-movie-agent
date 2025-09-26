@@ -15,7 +15,7 @@ try:
     
     # Initialize the Generative Model
     # Using gemini-1.5-flash which is fast and powerful
-    model = genai.GenerativeModel('gemini-pro')
+    model = genai.GenerativeModel('gemini-1.0-pro')
 
 except Exception as e:
     print(f"Error initializing Gemini model: {e}")
