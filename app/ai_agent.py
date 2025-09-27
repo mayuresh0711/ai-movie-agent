@@ -10,13 +10,11 @@ try:
     gemini_api_key = os.getenv("GEMINI_API_KEY")
     if not gemini_api_key:
         raise ValueError("Error: GEMINI_API_KEY not found. Make sure it's set in your .env file.")
-    
+
     genai.configure(api_key=gemini_api_key)
-    
-    # Initialize the Generative Model
-    # Using gemini-1.5-flash which is fast and powerful
-    # NEW LINE
-    model = genai.GenerativeModel('gemini-1.5-pro-latest')
+
+    # Use a model name confirmed to be available from your list
+    model = genai.GenerativeModel('models/gemini-pro-latest')
 
 except Exception as e:
     print(f"Error initializing Gemini model: {e}")
